@@ -1,0 +1,51 @@
+<!doctype html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1"/>
+	<title>오늘뭐하지?</title>
+	<script src="readFile.js"></script>
+	<script src="random.js"></script>
+	<style>
+		h1{
+			text-align: center;
+			border-bottom: 1px solid gray;
+			padding: 20px;
+			padding-top: 0px;
+			margin-bottom: 0px;
+		}
+		p{
+			margin: 0px;
+		}
+		#txt{
+			text-align: center;
+			position: relative;
+			z-index: 0;
+			margin-bottom: 50px;
+		}
+		#button{
+			position: absolute;
+			z-index: 1;
+			right: 10px;
+		}
+		.btn{
+			height: 50px;
+			margin-top: 13px;
+		}
+		#me{
+			text-align: center;
+			font-size: 12px;
+		}
+	</style>
+</head>
+<body onload="read('data/introduce.txt');">
+	<h1>What should I do?</h1>
+	
+	<div id="button"><input type="button" class="btn" onclick="read('data/'+randomNum()+'.txt')" value="뽑기"></div>
+	<form runat="server">
+		<div id="txt"></div>
+	</form>
+	<div id="me">
+		<p>개발자: 김진욱</p>
+		<p>버그 및 개선 문의: jinook0225@gmail.com</p>
+	</div>
+</body>
